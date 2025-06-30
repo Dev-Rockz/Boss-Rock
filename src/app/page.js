@@ -6,10 +6,10 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/header/header";
 import ProfileSection from "../components/home/homepage";
 import AboutSection from "@/components/aboutMe/aboutMe";
-//import ProjectsSection from "../components/projects/projectsection";
+import ProjectsSection from "@/components/projects/projects";
 // import Footer from "../components/footer/footer";
 // import AboutSection from "../components/aboutme/aboutsection";
-// import SkillsSection from "../components/skills/skillssection";
+import SkillsSection from "@/components/skills/skills";
 // import EducationAchievements from "../components/educationachievements/educationacheivements";
 // import ExperienceSection from "../components/experiences/experiencesection";
 // import GetInTouchSection from "../components/getintouch/getintouchsection";
@@ -39,9 +39,9 @@ function App() {
       <Header visible={showHeader} />
       <ProfileSection />
       <AboutSection />
-      {/* <SkillsSection />
+      <SkillsSection />
       <ProjectsSection />
-      <ExperienceSection />
+      {/* <ExperienceSection />
       <EducationAchievements />
       <GetInTouchSection />
       <Footer />  */}
