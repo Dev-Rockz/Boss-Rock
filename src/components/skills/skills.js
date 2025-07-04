@@ -11,8 +11,6 @@ const SkillsSection = () => {
     Frontend: [
       { name: "Flutter", level: 90, color: "#02569B" },
       { name: "React", level: 75, color: "#61DAFB" },
-      { name: "Vue.js", level: 70, color: "#4FC08D" },
-      { name: "Angular", level: 70, color: "#DD0031" },
       { name: "React Native", level: 75, color: "#61DAFB" },
       { name: "HTML/CSS", level: 85, color: "#E34F26" },
       { name: "JavaScript", level: 80, color: "#F7DF1E" },
@@ -21,38 +19,24 @@ const SkillsSection = () => {
     Backend: [
       { name: "Node.js", level: 90, color: "#339933" },
       { name: "Python", level: 70, color: "#3776AB" },
-      { name: "Django", level: 70, color: "#092E20" },
-      { name: "Express.js", level: 85, color: "#000000" },
       { name: "FastAPI", level: 70, color: "#009688" },
-      { name: "Java Spring", level: 70, color: "#6DB33F" },
       { name: "PHP Laravel", level: 70, color: "#FF2D20" },
-      { name: "GraphQL", level: 75, color: "#E10098" },
     ],
     Database: [
       { name: "MySQL", level: 90, color: "#4479A1" },
       { name: "Supabase", level: 70, color: "#3ECF8E" },
-      { name: "PostgreSQL", level: 70, color: "#336791" },
-      { name: "MongoDB", level: 70, color: "#47A248" },
       { name: "Firebase", level: 75, color: "#FFCA28" },
-      { name: "Redis", level: 70, color: "#DC382D" },
       { name: "SQLite", level: 80, color: "#003B57" },
     ],
     Design: [
       { name: "Figma", level: 85, color: "#F24E1E" },
       { name: "Adobe XD", level: 75, color: "#FF61F6" },
       { name: "Photoshop", level: 70, color: "#31A8FF" },
-      { name: "Illustrator", level: 70, color: "#FF9A00" },
-      { name: "Sketch", level: 65, color: "#F7B500" },
       { name: "Canva", level: 80, color: "#00C4CC" },
-      { name: "Blender", level: 60, color: "#F5792A" },
     ],
     Hardware: [
       { name: "Arduino", level: 85, color: "#00979D" },
-      { name: "Raspberry Pi", level: 80, color: "#C51A4A" },
-      { name: "ESP32/ESP8266", level: 90, color: "#E7352C" },
       { name: "PCB Design", level: 75, color: "#4CAF50" },
-      { name: "Sensors & IoT", level: 85, color: "#FF9800" },
-      { name: "3D Printing", level: 70, color: "#9C27B0" },
       { name: "Electronics", level: 80, color: "#607D8B" },
     ],
   };
@@ -131,18 +115,25 @@ const SkillsSection = () => {
           bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-white/20
           transition-all duration-500 cubic-bezier(0.25, 0.46, 0.45, 0.94)
           hover:-translate-y-2 hover:scale-105 hover:shadow-2xl
-          ${isCardVisible 
-            ? 'opacity-100 translate-y-0 scale-100' 
-            : 'opacity-0 translate-y-5 scale-95'
+          ${
+            isCardVisible
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-5 scale-95"
           }
         `}
         style={{
-          boxShadow: isCardVisible ? '0 8px 32px rgba(0,0,0,0.1)' : '0 4px 15px rgba(0,0,0,0.05)',
+          boxShadow: isCardVisible
+            ? "0 8px 32px rgba(0,0,0,0.1)"
+            : "0 4px 15px rgba(0,0,0,0.05)",
         }}
       >
         <div className="flex justify-between items-center mb-3">
-          <span className="text-lg font-semibold text-gray-800">{skill.name}</span>
-          <span className="text-base font-bold text-gray-600">{skill.level}%</span>
+          <span className="text-lg font-semibold text-gray-800">
+            {skill.name}
+          </span>
+          <span className="text-base font-bold text-gray-600">
+            {skill.level}%
+          </span>
         </div>
 
         <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -225,12 +216,13 @@ const SkillsSection = () => {
   return (
     <>
       <style>{styles}</style>
-      <section 
-        id="skills" 
-        ref={sectionRef} 
+      <section
+        id="skills"
+        ref={sectionRef}
         className="min-h-screen px-8 py-16 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%)"
+          background:
+            "linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%)",
         }}
       >
         {/* Header */}
@@ -239,10 +231,11 @@ const SkillsSection = () => {
             className={`
               text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 
               tracking-tight transition-opacity duration-300
-              ${isVisible ? 'title-animate opacity-100' : 'opacity-0'}
+              ${isVisible ? "title-animate opacity-100" : "opacity-0"}
             `}
             style={{
-              textShadow: "0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(100, 255, 218, 0.3)"
+              textShadow:
+                "0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(100, 255, 218, 0.3)",
             }}
           >
             Technical Skills
@@ -250,7 +243,7 @@ const SkillsSection = () => {
           <p
             className={`
               text-xl text-gray-300 max-w-2xl mx-auto transition-opacity duration-300
-              ${isVisible ? 'subtitle-animate opacity-100' : 'opacity-0'}
+              ${isVisible ? "subtitle-animate opacity-100" : "opacity-0"}
             `}
           >
             Here are the technologies and tools I use across different areas of
@@ -262,7 +255,7 @@ const SkillsSection = () => {
         <div
           className={`
             flex flex-wrap justify-center gap-4 mb-12 transition-opacity duration-300
-            ${isVisible ? 'buttons-animate opacity-100' : 'opacity-0'}
+            ${isVisible ? "buttons-animate opacity-100" : "opacity-0"}
           `}
         >
           {categories.map((cat, index) => (
@@ -272,15 +265,17 @@ const SkillsSection = () => {
                 px-6 py-3 rounded-full text-base font-semibold backdrop-blur-md
                 border-2 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-1 active:scale-95
-                ${activeCategory === cat
-                  ? 'bg-black/80 text-cyan-400 border-cyan-400 shadow-cyan-400/30'
-                  : 'bg-white/90 text-gray-700 border-transparent hover:shadow-lg'
+                ${
+                  activeCategory === cat
+                    ? "bg-black/80 text-cyan-400 border-cyan-400 shadow-cyan-400/30"
+                    : "bg-white/90 text-gray-700 border-transparent hover:shadow-lg"
                 }
               `}
               style={{
-                boxShadow: activeCategory === cat 
-                  ? '0 0 15px rgba(0, 255, 255, 0.3), 0 8px 25px rgba(0, 255, 255, 0.15)'
-                  : '0 4px 15px rgba(0,0,0,0.1)',
+                boxShadow:
+                  activeCategory === cat
+                    ? "0 0 15px rgba(0, 255, 255, 0.3), 0 8px 25px rgba(0, 255, 255, 0.15)"
+                    : "0 4px 15px rgba(0,0,0,0.1)",
                 animationDelay: `${0.6 + index * 0.1}s`,
               }}
               onClick={() => setActiveCategory(cat)}
@@ -291,9 +286,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills Content */}
-        <div className="relative z-10">
-          {renderContent()}
-        </div>
+        <div className="relative z-10">{renderContent()}</div>
       </section>
     </>
   );

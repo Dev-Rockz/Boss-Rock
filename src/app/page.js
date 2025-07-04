@@ -11,7 +11,7 @@ import ProjectsSection from "@/components/projects/projects";
 // import AboutSection from "../components/aboutme/aboutsection";
 import SkillsSection from "@/components/skills/skills";
 // import EducationAchievements from "../components/educationachievements/educationacheivements";
-// import ExperienceSection from "../components/experiences/experiencesection";
+import ExperienceSection from "@/components/experience/experience";
 // import GetInTouchSection from "../components/getintouch/getintouchsection";
 
 function App() {
@@ -41,8 +41,8 @@ function App() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      {/* <ExperienceSection />
-      <EducationAchievements />
+      <ExperienceSection />
+      {/* <EducationAchievements />
       <GetInTouchSection />
       <Footer />  */}
     </>
