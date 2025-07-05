@@ -364,11 +364,7 @@ const ProjectsSection = () => {
       <section
         id="projects"
         ref={sectionRef}
-        className="min-h-screen px-6 py-16 relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%)",
-        }}
+        className="min-h-screen px-6 py-16 relative overflow-hidden bg-gray-900"
       >
         <div className="text-center mb-16 relative z-10">
           <h2
