@@ -7,12 +7,6 @@ import {
   Smartphone,
   Cpu,
 } from "lucide-react";
-import Image from "next/image";
-import Profilepic from "@/assets/profile.png";
-
-import Project1_1 from "@/assets/project1/project1_1.jpg";
-import Project1_2 from "@/assets/project1/project1_2.jpg";
-import Project1_3 from "@/assets/project1/project1_3.jpg";
 
 const projects = [
   {
@@ -21,7 +15,11 @@ const projects = [
       "An Image Food Recognition Generating Recipes, Cooking Guidance and Nutritional Insights using Machine Learning",
     type: "Mobile",
     techStack: ["Flutter", "Stacked Framework"],
-    images: [Project1_1, Project1_2, Project1_3],
+    images: [
+      "/projects1/project1_1.jpg",
+      "/projects1/project1_2.jpg",
+      "/projects1/project1_3.jpg",
+    ],
     link: "#",
     color: "#3B82F6",
   },
@@ -249,7 +247,7 @@ const ProjectsSection = () => {
           {/* Image Carousel */}
           <div className="relative w-full h-full">
             {project.images.map((image, imgIndex) => (
-              <Image
+              <img
                 key={imgIndex}
                 src={image}
                 alt={`${project.title} ${imgIndex + 1}`}
@@ -261,7 +259,7 @@ const ProjectsSection = () => {
                     : "opacity-0 scale-105"
                 }`}
                 onError={(e) => {
-                  e.target.src = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="${project.color}20"/><text x="150" y="100" text-anchor="middle" fill="${project.color}" font-size="16" font-family="Arial">${project.title}</text></svg>`;
+                  e.target.src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='${project.color}20'/><text x='150' y='100' text-anchor='middle' fill='${project.color}' font-size='16' font-family='Arial'>${project.title}</text></svg>`;
                 }}
               />
             ))}

@@ -7,8 +7,6 @@ import {
   FaMobile,
   FaLaptop,
 } from "react-icons/fa";
-import Image from "next/image";
-import Profilepic from "@/assets/profile.png";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -162,8 +160,8 @@ const AboutSection = () => {
                     </div>
                   </div>
                 ) : (
-                  <Image
-                    src={Profilepic}
+                  <img
+                    src={"/profile.png"}
                     alt="Rocky Portrait"
                     width={310}
                     height={400}
