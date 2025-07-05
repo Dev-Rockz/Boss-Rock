@@ -66,41 +66,8 @@ const ProfileSection = () => {
               linear-gradient(90deg, rgba(255,0,255,0.1) 1px, transparent 1px)
             `,
             backgroundSize: "50px 50px, 50px 50px, 100px 100px, 100px 100px",
-            animation: "gridMove 20s linear infinite",
           }}
         ></div>
-      </div>
-
-      {/* Floating Digital Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-60"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${
-                3 + Math.random() * 4
-              }s ease-in-out infinite ${Math.random() * 2}s`,
-              boxShadow: "0 0 10px rgba(0,255,255,0.8)",
-            }}
-          />
-        ))}
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i + 8}
-            className="absolute w-1 h-1 bg-pink-500 rounded-full opacity-70"
-            style={{
-              right: `${Math.random() * 100}%`,
-              bottom: `${Math.random() * 100}%`,
-              animation: `float ${
-                4 + Math.random() * 3
-              }s ease-in-out infinite ${Math.random() * 2}s`,
-              boxShadow: "0 0 8px rgba(255,0,255,0.8)",
-            }}
-          />
-        ))}
       </div>
 
       {/* Glitch Overlay */}
@@ -111,7 +78,7 @@ const ProfileSection = () => {
 
       <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-16 z-10 relative">
         {/* Profile Image Section - Much Larger */}
-        <div className="relative flex-shrink-0 order-first lg:order-last">
+        <div className="relative flex-shrink-0 order-first lg:order-last pt-16 md:pt-0">
           <div
             className={`relative w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[600px] transition-all duration-1000 ease-out ${imageEntranceClass}`}
           >
@@ -360,25 +327,6 @@ const ProfileSection = () => {
       </div>
 
       <style jsx>{`
-        @keyframes gridMove {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(50px, 50px);
-          }
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(180deg);
-          }
-        }
-
         @keyframes glitch-1 {
           0%,
           100% {
