@@ -10,9 +10,9 @@ import ProjectsSection from "@/components/projects/projects";
 // import Footer from "../components/footer/footer";
 // import AboutSection from "../components/aboutme/aboutsection";
 import SkillsSection from "@/components/skills/skills";
-// import EducationAchievements from "../components/educationachievements/educationacheivements";
+import EducationAchievements from "@/components/education/education";
 import ExperienceSection from "@/components/experience/experience";
-// import GetInTouchSection from "../components/getintouch/getintouchsection";
+import GetInTouchSection from "@/components/getInTouch/getInTouch";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -42,9 +42,9 @@ function App() {
       <SkillsSection />
       <ProjectsSection />
       <ExperienceSection />
-      {/* <EducationAchievements />
+      <EducationAchievements />
       <GetInTouchSection />
-      <Footer />  */}
+      {/* <Footer />  */}
     </>
   );
 }

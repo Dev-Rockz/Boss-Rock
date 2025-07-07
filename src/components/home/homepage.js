@@ -51,29 +51,12 @@ const ProfileSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center p-4 md:p-8 bg-black relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-center p-4 md:p-8 bg-gray-900 relative overflow-hidden"
     >
-      {/* Cyberpunk Grid Background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 via-purple-900/20 to-pink-900/30"></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(rgba(255,0,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,0,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "50px 50px, 50px 50px, 100px 100px, 100px 100px",
-          }}
-        ></div>
-      </div>
-
-      {/* Glitch Overlay */}
+      {/* Subtle Glitch Overlay */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/5 to-transparent animate-glitch-1"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/5 to-transparent animate-glitch-2"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/3 to-transparent animate-glitch-1"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/3 to-transparent animate-glitch-2"></div>
       </div>
 
       <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-16 z-10 relative">
@@ -268,7 +251,7 @@ const ProfileSection = () => {
               &lt;Software Developer/&gt;
             </h2>
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-              {["Full Stack", "Mobile", "Web"].map((specialty) => (
+              {["Frontend", "Backend"].map((specialty) => (
                 <span
                   key={specialty}
                   className="px-4 py-2 bg-black/80 text-cyan-400 rounded-none text-sm font-medium border-2 border-cyan-400/50 backdrop-blur-sm drop-shadow-[0_0_10px_rgba(0,255,255,0.6)] transition-all duration-300 hover:bg-cyan-400/20 hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,255,255,0.4)] hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.8)] hover:border-cyan-400 cursor-pointer font-mono relative overflow-hidden group"
@@ -299,15 +282,15 @@ const ProfileSection = () => {
             <a
               href="/path/to/your-cv.pdf"
               download
-              className="group inline-flex items-center justify-center px-6 py-3 bg-black/80 text-pink-400 rounded-none text-base font-medium border-2 border-pink-500 backdrop-blur-sm drop-shadow-[0_0_10px_rgba(255,0,255,0.6)] shadow-[0_0_20px_rgba(255,0,255,0.3)] transition-all duration-300 hover:bg-pink-500/20 hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(255,0,255,0.5)] hover:drop-shadow-[0_0_15px_rgba(255,0,255,0.8)] hover:border-pink-400 relative overflow-hidden font-mono"
+              className="group inline-flex items-center justify-center px-6 py-3 bg-black/80 text-cyan-400 rounded-none text-base font-medium border-2 border-cyan-400 backdrop-blur-sm drop-shadow-[0_0_10px_rgba(0,255,255,0.6)] shadow-[0_0_20px_rgba(0,255,255,0.3)] transition-all duration-300 hover:bg-cyan-400/20 hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.8)] hover:border-cyan-300 relative overflow-hidden font-mono"
               style={{
                 clipPath:
                   "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-500"></div>
               <Download size={18} className="mr-2 relative z-10" />
-              <span className="relative z-10">DOWNLOAD.exe</span>
+              <span className="relative z-10">RESUME</span>
             </a>
 
             <a
