@@ -34,13 +34,13 @@ const AboutSection = () => {
 
   // Handle image load error
   const handleImageError = () => {
-    console.error("Failed to load profile image from:", Profilepic);
+    console.error("Failed to load profile image");
     setImageError(true);
   };
 
   // Handle image load success
   const handleImageLoad = () => {
-    console.log("Profile image loaded successfully from:", Profilepic);
+    console.log("Profile image loaded successfully");
   };
 
   // Optimized intersection observer with single observer
@@ -107,16 +107,12 @@ const AboutSection = () => {
     <section
       ref={refs.section}
       id="about"
-      className="min-h-screen bg-gray-900 relative overflow-hidden flex items-center justify-center animate-pulse-bg pt-20"
+      className="min-h-screen bg-gray-900 relative overflow-hidden flex items-center justify-center pt-20"
       style={{
         scrollMarginTop: "100px",
-        backgroundImage: `
-          radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.03) 0%, transparent 50%), 
-          radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.03) 0%, transparent 50%)
-        `,
       }}
     >
-      <div className="w-full max-w-7xl flex flex-col justify-center">
+      <div className="w-full max-w-7xl flex flex-col justify-center relative z-10">
         {/* Header */}
         <div
           ref={refs.header}
@@ -134,7 +130,7 @@ const AboutSection = () => {
               Passionate Developer & Creative Problem Solver
             </p>
           </div>
-          <div className="w-32 h-1 bg-gradient-to-r from-pink-500 via-cyan-400 to-pink-500 mx-auto rounded-full shadow-glow-cyan mt-4" />
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mx-auto rounded-full shadow-glow-cyan mt-4" />
         </div>
 
         {/* Main Content */}
@@ -150,7 +146,7 @@ const AboutSection = () => {
           >
             {/* Profile Image */}
             <div className="relative w-80 h-96 mb-6 -mt-6">
-              <div className="w-full h-full rounded-3xl bg-gradient-to-br from-cyan-400/30 to-pink-500/30 p-1 shadow-glow-multi transition-all duration-300 hover:shadow-glow-multi-intense">
+              <div className="w-full h-full rounded-3xl bg-gradient-to-br from-cyan-400/30 to-blue-500/30 p-1 shadow-glow-multi transition-all duration-300 hover:shadow-glow-multi-intense">
                 {imageError ? (
                   <div className="w-full h-full bg-gray-800 rounded-2xl flex items-center justify-center text-gray-400">
                     <div className="text-center">
@@ -161,17 +157,17 @@ const AboutSection = () => {
                   </div>
                 ) : (
                   <img
-                    src={"/profile.png"}
+                    src="/profile.png"
                     alt="Rocky Portrait"
-                    width={310}
-                    height={400}
+                    onError={handleImageError}
+                    onLoad={handleImageLoad}
                     className="w-full h-full object-cover rounded-2xl"
                   />
                 )}
               </div>
 
               {/* Floating Icon */}
-              <div className="absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br from-pink-500 to-cyan-400 rounded-xl flex items-center justify-center text-white text-xl shadow-glow-multi animate-bounce-neon">
+              <div className="absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center text-white text-xl shadow-glow-multi animate-bounce-neon">
                 <FaCode className="drop-shadow-glow-white" />
               </div>
             </div>
@@ -207,7 +203,7 @@ const AboutSection = () => {
               }`}
             >
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <span className="w-1 h-6 bg-gradient-to-b from-pink-500 to-cyan-400 rounded-full shadow-glow-cyan" />
+                <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-cyan-400 rounded-full shadow-glow-cyan" />
                 <span className="drop-shadow-glow-white">Who I Am</span>
               </h3>
 
@@ -272,7 +268,7 @@ const AboutSection = () => {
                     key={index}
                     className="flex flex-col items-center text-center flex-1 relative"
                   >
-                    <span className="text-2xl font-bold text-pink-500 mb-1 drop-shadow-glow-pink">
+                    <span className="text-2xl font-bold text-blue-400 mb-1 drop-shadow-glow-blue">
                       {stat.number}
                     </span>
                     <span className="text-sm text-cyan-400 font-medium drop-shadow-glow-cyan">
@@ -310,40 +306,8 @@ const AboutSection = () => {
           }
         }
 
-        @keyframes pulse-bg {
-          0%,
-          100% {
-            background-image: radial-gradient(
-                circle at 25% 25%,
-                rgba(0, 255, 255, 0.03) 0%,
-                transparent 50%
-              ),
-              radial-gradient(
-                circle at 75% 75%,
-                rgba(255, 0, 255, 0.03) 0%,
-                transparent 50%
-              );
-          }
-          50% {
-            background-image: radial-gradient(
-                circle at 30% 30%,
-                rgba(0, 255, 255, 0.05) 0%,
-                transparent 50%
-              ),
-              radial-gradient(
-                circle at 70% 70%,
-                rgba(255, 0, 255, 0.05) 0%,
-                transparent 50%
-              );
-          }
-        }
-
         :global(.animate-bounce-neon) {
           animation: bounce-neon 2s infinite;
-        }
-
-        :global(.animate-pulse-bg) {
-          animation: pulse-bg 8s ease-in-out infinite;
         }
 
         :global(.drop-shadow-glow-white) {
@@ -355,8 +319,8 @@ const AboutSection = () => {
           text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
 
-        :global(.drop-shadow-glow-pink) {
-          text-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+        :global(.drop-shadow-glow-blue) {
+          text-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
         }
 
         :global(.drop-shadow-glow-text) {
@@ -373,12 +337,12 @@ const AboutSection = () => {
 
         :global(.shadow-glow-multi) {
           box-shadow: 0 8px 30px rgba(100, 255, 218, 0.3),
-            0 0 50px rgba(255, 0, 128, 0.2);
+            0 0 50px rgba(0, 191, 255, 0.2);
         }
 
         :global(.shadow-glow-multi-intense) {
           box-shadow: 0 12px 40px rgba(100, 255, 218, 0.4),
-            0 0 60px rgba(255, 0, 128, 0.3);
+            0 0 60px rgba(0, 191, 255, 0.3);
         }
       `}</style>
     </section>

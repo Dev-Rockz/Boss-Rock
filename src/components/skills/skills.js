@@ -43,15 +43,12 @@ const SkillsSection = () => {
 
   const categories = Object.keys(skillsData);
 
-  // Intersection Observer for section visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
         if (entry.isIntersecting) {
-          // Reset visible cards when section becomes visible
           setVisibleCards([]);
-          // Trigger staggered card animations
           const currentSkills = skillsData[activeCategory];
           currentSkills.forEach((_, index) => {
             setTimeout(() => {
@@ -60,10 +57,7 @@ const SkillsSection = () => {
           });
         }
       },
-      {
-        threshold: 0.3,
-        rootMargin: "-50px 0px",
-      }
+      { threshold: 0.3, rootMargin: "-50px 0px" }
     );
 
     if (sectionRef.current) {
@@ -79,12 +73,8 @@ const SkillsSection = () => {
 
   useEffect(() => {
     setAnimationKey((prev) => prev + 1);
-    // Reset and trigger new card animations when category changes
     if (isVisible) {
-      // First hide all cards smoothly
       setVisibleCards([]);
-
-      // Then show new cards with a slight delay to allow exit animation
       setTimeout(() => {
         const currentSkills = skillsData[activeCategory];
         currentSkills.forEach((_, index) => {
@@ -166,97 +156,43 @@ const SkillsSection = () => {
     );
   };
 
-  const styles = `
-    @keyframes slideInFromLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInFromRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .title-animate {
-      animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-    
-    .subtitle-animate {
-      animation: slideInFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
-    }
-    
-    .buttons-animate {
-      animation: fadeInUp 0.6s ease-out 0.4s both;
-    }
-  `;
-
   return (
-    <>
-      <style>{styles}</style>
-      <section
-        id="skills"
-        ref={sectionRef}
-        className="min-h-screen px-8 py-16 relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 25%, #0a0a1a 50%, #1a0a0a 75%, #0a0a0a 100%)",
-        }}
-      >
-        {/* Header */}
-        <div className="text-center mb-12 relative z-10">
+    <section
+      id="skills"
+      ref={sectionRef}
+      className={`min-h-screen bg-gray-900 relative overflow-hidden px-8 py-16 transition-all duration-1000`}
+      style={{
+        scrollMarginTop: "100px",
+      }}
+    >
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="text-center mb-12">
           <h2
-            className={`
-              text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 
-              tracking-tight transition-opacity duration-300
-              ${isVisible ? "title-animate opacity-100" : "opacity-0"}
-            `}
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight ${
+              isVisible ? "title-animate opacity-100" : "opacity-0"
+            }`}
             style={{
               textShadow:
-                "0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(100, 255, 218, 0.3)",
+                "0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(100,255,218,0.3)",
             }}
           >
             Technical Skills
           </h2>
           <p
-            className={`
-              text-xl text-gray-300 max-w-2xl mx-auto transition-opacity duration-300
-              ${isVisible ? "subtitle-animate opacity-100" : "opacity-0"}
-            `}
+            className={`text-xl text-gray-300 max-w-2xl mx-auto ${
+              isVisible ? "subtitle-animate opacity-100" : "opacity-0"
+            }`}
           >
             Here are the technologies and tools I use across different areas of
             development.
           </p>
         </div>
 
-        {/* Category Buttons */}
         <div
-          className={`
-            flex flex-wrap justify-center gap-4 mb-12 transition-opacity duration-300
-            ${isVisible ? "buttons-animate opacity-100" : "opacity-0"}
-          `}
+          className={`flex flex-wrap justify-center gap-4 mb-12 ${
+            isVisible ? "buttons-animate opacity-100" : "opacity-0"
+          }`}
         >
           {categories.map((cat, index) => (
             <button
@@ -274,7 +210,7 @@ const SkillsSection = () => {
               style={{
                 boxShadow:
                   activeCategory === cat
-                    ? "0 0 15px rgba(0, 255, 255, 0.3), 0 8px 25px rgba(0, 255, 255, 0.15)"
+                    ? "0 0 15px rgba(0,255,255,0.3), 0 8px 25px rgba(0,255,255,0.15)"
                     : "0 4px 15px rgba(0,0,0,0.1)",
                 animationDelay: `${0.6 + index * 0.1}s`,
               }}
@@ -285,10 +221,53 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skills Content */}
-        <div className="relative z-10">{renderContent()}</div>
-      </section>
-    </>
+        {renderContent()}
+      </div>
+
+      <style jsx>{`
+        @keyframes slideInFromLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @keyframes slideInFromRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        :global(.title-animate) {
+          animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)
+            forwards;
+        }
+        :global(.subtitle-animate) {
+          animation: slideInFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)
+            0.2s both;
+        }
+        :global(.buttons-animate) {
+          animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+      `}</style>
+    </section>
   );
 };
 

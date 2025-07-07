@@ -6,6 +6,7 @@ import {
   Code,
   Smartphone,
   Cpu,
+  X,
 } from "lucide-react";
 
 const projects = [
@@ -15,11 +16,7 @@ const projects = [
       "An Image Food Recognition Generating Recipes, Cooking Guidance and Nutritional Insights using Machine Learning",
     type: "Mobile",
     techStack: ["Flutter", "Stacked Framework"],
-    images: [
-      "/projects1/project1_1.jpg",
-      "/projects1/project1_2.jpg",
-      "/projects1/project1_3.jpg",
-    ],
+    image: "/projects1/project1_1.jpg",
     link: "#",
     color: "#3B82F6",
   },
@@ -28,11 +25,8 @@ const projects = [
     description: "Personal developer portfolio showcasing skills and projects.",
     type: "Web",
     techStack: ["React", "Tailwind", "Framer Motion"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%238B5CF6'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Portfolio</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%237C3AED'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>About Page</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%236D28D9'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Contact</text></svg>",
-    ],
     link: "#",
     color: "#8B5CF6",
   },
@@ -41,10 +35,8 @@ const projects = [
     description: "Displays live weather using API and user's location.",
     type: "Mobile",
     techStack: ["Flutter", "OpenWeather API"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%2306B6D4'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Weather</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%230891B2'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Forecast</text></svg>",
-    ],
     link: "#",
     color: "#06B6D4",
   },
@@ -53,11 +45,8 @@ const projects = [
     description: "Arduino-based irrigation system with moisture sensors.",
     type: "Arduino",
     techStack: ["Arduino", "C++", "Sensors"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%2310B981'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Irrigation</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23059669'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Sensors</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23047857'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Controls</text></svg>",
-    ],
     link: "#",
     color: "#10B981",
   },
@@ -66,10 +55,8 @@ const projects = [
     description: "Track income and expenses with monthly analytics.",
     type: "Web",
     techStack: ["Vue.js", "Tailwind", "Supabase"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23F59E0B'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Expense</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23D97706'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Analytics</text></svg>",
-    ],
     link: "#",
     color: "#F59E0B",
   },
@@ -78,11 +65,8 @@ const projects = [
     description: "An AR app to visualize planets in 3D space.",
     type: "Mobile",
     techStack: ["Unity", "C#", "Vuforia"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23EF4444'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>AR Solar</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23DC2626'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Planets</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23B91C1C'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>AR View</text></svg>",
-    ],
     link: "#",
     color: "#EF4444",
   },
@@ -91,11 +75,8 @@ const projects = [
     description: "Full-stack e-commerce solution with payment integration.",
     type: "Web",
     techStack: ["Next.js", "Node.js", "MongoDB"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%238B5CF6'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>E-Commerce</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%237C3AED'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Products</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%236D28D9'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Cart</text></svg>",
-    ],
     link: "#",
     color: "#8B5CF6",
   },
@@ -104,10 +85,8 @@ const projects = [
     description: "Real-time monitoring dashboard for IoT devices.",
     type: "Arduino",
     techStack: ["React", "Node.js", "Socket.io"],
-    images: [
+    image:
       "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%2306B6D4'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>IoT Dashboard</text></svg>",
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%230891B2'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Devices</text></svg>",
-    ],
     link: "#",
     color: "#06B6D4",
   },
@@ -118,7 +97,8 @@ const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [containerState, setContainerState] = useState("visible");
-  const [imageIndexes, setImageIndexes] = useState({});
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
 
   const projectsPerPage = 6;
@@ -142,27 +122,17 @@ const ProjectsSection = () => {
     }
   };
 
-  // Auto-slide images
+  // Check if device is mobile
   useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndexes((prev) => {
-        const newIndexes = { ...prev };
-        getCurrentProjects().forEach((project, projectIndex) => {
-          const key = `${currentPage}-${projectIndex}`;
-          const currentIndex = newIndexes[key] || 0;
-          newIndexes[key] = (currentIndex + 1) % project.images.length;
-        });
-        return newIndexes;
-      });
-    }, 3000); // Change image every 3 seconds
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    return () => clearInterval(interval);
-  }, [currentPage]);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-  // Reset image indexes when page changes
-  useEffect(() => {
-    setImageIndexes({});
-  }, [currentPage]);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -202,6 +172,16 @@ const ProjectsSection = () => {
     }, 400);
   };
 
+  const handleProjectClick = (project) => {
+    if (isMobile) {
+      setSelectedProject(project);
+    }
+  };
+
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+  };
+
   const getContainerClasses = () => {
     const baseClasses =
       "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl mx-auto w-full transition-all duration-300 ease-out";
@@ -218,9 +198,6 @@ const ProjectsSection = () => {
   };
 
   const ProjectCard = ({ project, index }) => {
-    const imageKey = `${currentPage}-${index}`;
-    const currentImageIndex = imageIndexes[imageKey] || 0;
-
     return (
       <div
         className={`
@@ -237,6 +214,7 @@ const ProjectsSection = () => {
           transitionDelay:
             containerState === "visible" ? `${index * 100}ms` : "0ms",
         }}
+        onClick={() => handleProjectClick(project)}
       >
         <div className="relative flex-1 overflow-hidden">
           <div
@@ -244,40 +222,17 @@ const ProjectsSection = () => {
             style={{ backgroundColor: project.color }}
           />
 
-          {/* Image Carousel */}
+          {/* Single Image */}
           <div className="relative w-full h-full">
-            {project.images.map((image, imgIndex) => (
-              <img
-                key={imgIndex}
-                src={image}
-                alt={`${project.title} ${imgIndex + 1}`}
-                width={310}
-                height={400}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${
-                  imgIndex === currentImageIndex
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-105"
-                }`}
-                onError={(e) => {
-                  e.target.src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='${project.color}20'/><text x='150' y='100' text-anchor='middle' fill='${project.color}' font-size='16' font-family='Arial'>${project.title}</text></svg>`;
-                }}
-              />
-            ))}
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='${project.color}20'/><text x='150' y='100' text-anchor='middle' fill='${project.color}' font-size='16' font-family='Arial'>${project.title}</text></svg>`;
+              }}
+            />
           </div>
-
-          {/* Image indicators */}
-          {project.images.length > 1 && (
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1 z-10">
-              {project.images.map((_, imgIndex) => (
-                <div
-                  key={imgIndex}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    imgIndex === currentImageIndex ? "bg-white" : "bg-white/50"
-                  }`}
-                />
-              ))}
-            </div>
-          )}
 
           <div
             className="absolute top-2 right-2 px-2 py-1 rounded-full text-white text-xs font-medium flex items-center gap-1 z-10"
@@ -294,7 +249,8 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        <div className="absolute inset-0 bg-black/95 backdrop-blur-sm transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 translate-y-full group-hover:translate-y-0 flex flex-col justify-center items-center p-8">
+        {/* Desktop Hover Overlay */}
+        <div className="absolute inset-0 bg-black/95 backdrop-blur-sm transition-all duration-300 ease-out opacity-0 md:group-hover:opacity-100 translate-y-full md:group-hover:translate-y-0 flex flex-col justify-center items-center p-8 hidden md:flex">
           <div className="text-center space-y-5 max-w-sm">
             <h3 className="font-bold text-white text-2xl leading-tight">
               {project.title}
@@ -322,9 +278,78 @@ const ProjectsSection = () => {
               href={project.link}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-base font-medium transition-all hover:scale-105 mt-6"
               style={{ backgroundColor: project.color }}
+              onClick={(e) => e.stopPropagation()}
             >
               <span>View Project</span>
               <ExternalLink className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Mobile Project Modal
+  const ProjectModal = ({ project, onClose }) => {
+    if (!project) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:hidden">
+        <div className="bg-white rounded-xl max-w-sm w-full max-h-[90vh] overflow-y-auto">
+          {/* Header */}
+          <div className="relative">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 object-cover rounded-t-xl"
+              onError={(e) => {
+                e.target.src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='${project.color}20'/><text x='150' y='100' text-anchor='middle' fill='${project.color}' font-size='16' font-family='Arial'>${project.title}</text></svg>`;
+              }}
+            />
+            <button
+              onClick={onClose}
+              className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div
+              className="absolute top-2 left-2 px-2 py-1 rounded-full text-white text-xs font-medium flex items-center gap-1"
+              style={{ backgroundColor: `${project.color}CC` }}
+            >
+              {getTypeIcon(project.type)}
+              {project.type}
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="p-6 space-y-4">
+            <h3 className="font-bold text-gray-900 text-xl">{project.title}</h3>
+
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="space-y-3">
+              <p className="text-gray-800 text-sm font-medium">Tech Stack:</p>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <a
+              href={project.link}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-medium transition-all w-full justify-center mt-6"
+              style={{ backgroundColor: project.color }}
+            >
+              <span>View Project</span>
+              <ExternalLink className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -459,6 +484,9 @@ const ProjectsSection = () => {
             </p>
           </div>
         )}
+
+        {/* Mobile Project Modal */}
+        <ProjectModal project={selectedProject} onClose={closeProjectModal} />
       </section>
     </>
   );
