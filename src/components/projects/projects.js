@@ -21,74 +21,74 @@ const projects = [
     color: "#3B82F6",
   },
   {
-    title: "Portfolio Website",
-    description: "Personal developer portfolio showcasing skills and projects.",
-    type: "Web",
-    techStack: ["React", "Tailwind", "Framer Motion"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%238B5CF6'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Portfolio</text></svg>",
+    title: "FOOD AI Backend API",
+    description:
+      "Handles image processing, recipe generation, and nutrition analysis for the FOOD AI app.",
+    type: "Server",
+    techStack: ["Node.js"],
+    image: "/projects2/image.png",
     link: "#",
-    color: "#8B5CF6",
+    color: "#FACC15",
   },
   {
-    title: "Weather App",
-    description: "Displays live weather using API and user's location.",
+    title: "FOOD AI Backend API",
+    description:
+      "Flask backend that verifies and classifies Filipino dishes using Gemini AI and a TFLite model. Returns predictions from uploaded images for the FOOD AI app.",
+    type: "Server",
+    techStack: ["Python", "Flask", "TensorFlow Lite", "Google Gemini API"],
+    image: "/projects3/image.png",
+    link: "#",
+    color: "#FACC15",
+  },
+  {
+    title: "Ebaybaymo Mobile App",
+    description:
+      "A mobile app that processes images of Baybayin script and translates them into readable text using image recognition.",
     type: "Mobile",
-    techStack: ["Flutter", "OpenWeather API"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%2306B6D4'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Weather</text></svg>",
+    techStack: ["Flutter", "Stacked Framework"],
+    image: "/projects4/image.jpg",
     link: "#",
-    color: "#06B6D4",
+    color: "#3B82F6",
   },
   {
-    title: "Smart Irrigation",
-    description: "Arduino-based irrigation system with moisture sensors.",
-    type: "Arduino",
-    techStack: ["Arduino", "C++", "Sensors"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%2310B981'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Irrigation</text></svg>",
-    link: "#",
-    color: "#10B981",
-  },
-  {
-    title: "Expense Tracker",
-    description: "Track income and expenses with monthly analytics.",
-    type: "Web",
-    techStack: ["Vue.js", "Tailwind", "Supabase"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23F59E0B'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>Expense</text></svg>",
-    link: "#",
-    color: "#F59E0B",
-  },
-  {
-    title: "AR Solar System",
-    description: "An AR app to visualize planets in 3D space.",
+    title: "Techno Concern",
+    description:
+      "A mobile app for students to submit tech concerns, with instructors handling admin-assigned issues through real-time updates.",
     type: "Mobile",
-    techStack: ["Unity", "C#", "Vuforia"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23EF4444'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>AR Solar</text></svg>",
+    techStack: ["Flutter", "Stacked Framework", "Supabase"],
+    image: "/projects5/image1.jpg",
     link: "#",
-    color: "#EF4444",
+    color: "#3B82F6",
   },
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration.",
+    title: "FOOD AI WEB",
+    description:
+      "An AI-powered web app that helps users find and create recipes from food images. Features include recipe search, snapshot uploads, image-based recipe generation, and a chatbot for cooking assistance.",
     type: "Web",
-    techStack: ["Next.js", "Node.js", "MongoDB"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%238B5CF6'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>E-Commerce</text></svg>",
+    techStack: ["Python", "Streamlit", "Google-Gemini"],
+    image: "/projects6/Picture2.png",
     link: "#",
-    color: "#8B5CF6",
+    color: "#22C55E",
   },
   {
-    title: "IoT Dashboard",
-    description: "Real-time monitoring dashboard for IoT devices.",
-    type: "Arduino",
-    techStack: ["React", "Node.js", "Socket.io"],
-    image:
-      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%2306B6D4'/><text x='150' y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'>IoT Dashboard</text></svg>",
+    title: "BISU-ROTC Attendance",
+    description:
+      "An attendance tracking app for BISU-ROTC where users fill out their details to generate a unique QR code for attendance. Includes additional features to streamline and secure ROTC attendance management.",
+    type: "Mobile",
+    techStack: ["Flutter", "Stacked Framework"],
+    image: "/projects7/image.jpg",
     link: "#",
-    color: "#06B6D4",
+    color: "#3B82F6",
+  },
+  {
+    title: "BISU-ROTC qr-code",
+    description:
+      "An attendance app for BISU-ROTC where users generate a QR code after submitting their details. ROTC officers scan the code using a separate app to record attendance.",
+    type: "Mobile",
+    techStack: ["Flutter", "Stacked Framework"],
+    image: "/projects8/image.jpg",
+    link: "#",
+    color: "#3B82F6",
   },
 ];
 

@@ -15,44 +15,40 @@ const EducationAchievements = () => {
       id: 1,
       level: "College",
       degree: "Bachelor of Science in Computer Science",
-      institution: "Bohol Island State University",
-      period: "2020 - 2024",
+      institution: "Bohol Island State University - Bilar Campus",
+      period: "2021 - 2025",
       status: "Graduated",
-      gpa: "3.8/4.0",
-      highlights: ["Magna Cum Laude", "Dean's List", "Research Excellence"],
+      gpa: "-",
+      highlights: ["Exemplary Award", "Research Excellence"],
       description:
         "Specialized in software engineering, mobile development, and database systems.",
-      icon: "🎓",
+      image: "/logo/logobissu.png",
     },
     {
       id: 2,
-      level: "High School",
-      degree: "Science, Technology, Engineering and Mathematics (STEM)",
-      institution: "[Your High School Name]",
-      period: "2016 - 2020",
+      level: "Senior High School",
+      degree: "TVL - Electronics",
+      institution: "Katipunan National Highschool",
+      period: "2017 - 2019",
       status: "Graduated",
-      gpa: "95.5%",
-      highlights: ["Honor Roll", "Science Fair Winner", "Math Olympiad"],
+      gpa: "90%",
+      highlights: ["With Honors"],
       description:
-        "Focused on advanced mathematics, physics, and computer programming fundamentals.",
-      icon: "📚",
+        "Studied practical electronics, circuit design, and hands-on technical skills in electrical systems and devices under the TVL track.",
+      image: "/logo/katipunan images.png",
     },
     {
       id: 3,
       level: "Elementary",
       degree: "Elementary Education",
-      institution: "[Your Elementary School Name]",
+      institution: "Guadalupe, Carmen, Bohol",
       period: "2010 - 2016",
       status: "Graduated",
       gpa: "With Honors",
-      highlights: [
-        "Perfect Attendance",
-        "Student Council",
-        "Academic Excellence",
-      ],
+      highlights: ["Honored Student"],
       description:
         "Built strong foundation in core subjects and developed leadership skills.",
-      icon: "🌟",
+      image: "/logo/pngegg.png",
     },
   ];
 
@@ -289,7 +285,7 @@ const EducationAchievements = () => {
         {/* Education Tab Content */}
         {activeTab === "education" && (
           <div
-            className={`space-y-8 transition-all duration-600 ease-in-out ${
+            className={`space-y-16 transition-all duration-600 ease-in-out ${
               isTransitioning
                 ? "opacity-0 transform translate-y-8 scale-95"
                 : "opacity-100 transform translate-y-0 scale-100"
@@ -311,7 +307,14 @@ const EducationAchievements = () => {
                   {/* Left Section - Main Info */}
                   <div className="flex-1">
                     <div className="flex items-center mb-6">
-                      <div className="text-5xl mr-4">{edu.icon}</div>
+                      <div className="relative mr-6">
+                        <div className="absolute inset-0 bg-sky-400/30 rounded-full blur-md"></div>
+                        <img
+                          src={edu.image}
+                          alt={edu.level}
+                          className="relative w-20 h-20 shadow-lg object-contain transition-all duration-300 group-hover:scale-110"
+                        />
+                      </div>
                       <div>
                         <h3 className="text-3xl font-bold text-white mb-2">
                           {edu.level}
