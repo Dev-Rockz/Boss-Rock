@@ -157,7 +157,7 @@ const AboutSection = () => {
                   </div>
                 ) : (
                   <img
-                    src="/profile.png"
+                    src="/backprofile.jpg"
                     alt="Rocky Portrait"
                     onError={handleImageError}
                     onLoad={handleImageLoad}
@@ -213,9 +213,9 @@ const AboutSection = () => {
                   <span className="font-semibold text-cyan-400 drop-shadow-glow-cyan">
                     Rocky
                   </span>
-                  , a recent computer science graduate who is a motivated and
-                  imaginative mobile and web developer. I am an expert in using
-                  Flutter to create mobile applications, and I am also
+                  , a computer science graduate who is a motivated and
+                  imaginative Frontend and Backend Developer. I specialized in
+                  using Flutter to create mobile applications, and I am also
                   proficient in database administration and backend development.
                   In order to increase my knowledge and produce even more
                   adaptable solutions, I'm currently delving deeper into web

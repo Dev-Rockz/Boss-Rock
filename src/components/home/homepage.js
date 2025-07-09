@@ -198,7 +198,7 @@ const ProfileSection = () => {
               <div className="w-full h-full bg-black/90 p-3 shadow-[inset_0_0_30px_rgba(0,0,0,0.8)] border border-cyan-400/20">
                 <div className="w-full h-full overflow-hidden border-2 border-gradient-to-r from-cyan-400 to-pink-500 shadow-[0_0_40px_rgba(0,255,255,0.6)]">
                   <img
-                    src="/profile.png"
+                    src="/newprofile.jpg"
                     alt="Rocky M. Pabalate"
                     className="w-full h-full object-cover transition-all duration-500 hover:scale-105 hover:brightness-110"
                     style={{

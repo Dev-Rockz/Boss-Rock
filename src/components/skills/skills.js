@@ -41,6 +41,38 @@ const SkillsSection = () => {
     ],
   };
 
+  const technologies = [
+    {
+      name: "Google",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+    },
+    {
+      name: "Slack",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg",
+    },
+    {
+      name: "VS Code",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    },
+    {
+      name: "GitHub",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    },
+    {
+      name: "Google Colab",
+      logo: "https://colab.research.google.com/img/colab_favicon_256px.png",
+    },
+
+    {
+      name: "MongoDB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    },
+    {
+      name: "Postman",
+      logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+    },
+  ];
+
   const categories = Object.keys(skillsData);
 
   useEffect(() => {
@@ -140,6 +172,40 @@ const SkillsSection = () => {
     );
   };
 
+  const TechLogo = ({ tech, index }) => {
+    return (
+      <div
+        className="flex items-center justify-center p-2 transition-all duration-300 hover:scale-110"
+        style={{
+          animationDelay: `${index * 0.05}s`,
+        }}
+      >
+        <img
+          src={tech.logo}
+          alt={tech.name}
+          className="w-8 h-8 object-contain transition-transform duration-300"
+        />
+      </div>
+    );
+  };
+
+  const TechSlider = () => {
+    return (
+      <div className="mt-12 mb-8">
+        <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">
+          Other Technologies
+        </h3>
+        <div className="flex justify-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-6 justify-items-center">
+            {technologies.map((tech, index) => (
+              <TechLogo key={tech.name} tech={tech} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderContent = () => {
     const skills = skillsData[activeCategory];
 
@@ -222,6 +288,8 @@ const SkillsSection = () => {
         </div>
 
         {renderContent()}
+
+        <TechSlider />
       </div>
 
       <style jsx>{`
@@ -255,6 +323,7 @@ const SkillsSection = () => {
             transform: translateY(0);
           }
         }
+
         :global(.title-animate) {
           animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)
             forwards;
