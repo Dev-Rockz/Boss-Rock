@@ -280,7 +280,7 @@ const ProfileSection = () => {
             className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-700 delay-700 ${fadeInClass}`}
           >
             <a
-              href="/path/to/your-cv.pdf"
+              href="/resume/Plain CV Rocky M. Pabalate.pdf"
               download
               className="group inline-flex items-center justify-center px-6 py-3 bg-black/80 text-cyan-400 rounded-none text-base font-medium border-2 border-cyan-400 backdrop-blur-sm drop-shadow-[0_0_10px_rgba(0,255,255,0.6)] shadow-[0_0_20px_rgba(0,255,255,0.3)] transition-all duration-300 hover:bg-cyan-400/20 hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.8)] hover:border-cyan-300 relative overflow-hidden font-mono"
               style={{

@@ -88,17 +88,17 @@ const AboutSection = () => {
   const socialLinks = [
     {
       icon: <FaLinkedin />,
-      href: "https://www.linkedin.com/in/your-profile",
+      href: "https://www.linkedin.com/in/rocky-pabalate-205271345/",
       label: "LinkedIn",
     },
     {
       icon: <FaGithub />,
-      href: "https://github.com/your-username",
+      href: "https://github.com/Dev-Rockz",
       label: "GitHub",
     },
     {
       icon: <FaFacebook />,
-      href: "https://www.facebook.com/your-profile",
+      href: "https://www.facebook.com/rocky.m.pabalate",
       label: "Facebook",
     },
   ];
