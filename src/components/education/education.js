@@ -54,10 +54,20 @@ const EducationAchievements = () => {
 
   const achievementCategories = [
     {
-      category: "Academic Excellence",
+      category: "Achievements",
       achievements: [
         {
           id: 1,
+          title: "BISU - Bilar Exemplary Award 2025",
+          description:
+            "Recognize for outstanding achievements and exemplary performance in the IT/CS Track field.",
+          date: "June 2024",
+          type: "Award",
+          image: "/certificate/cert1.jpg",
+          tags: ["Award", "Excellence"],
+        },
+        {
+          id: 2,
           title: "ICBEIST 2025 Research Presentation",
           description:
             "Presented innovative research on mobile app development at international conference",
@@ -67,74 +77,84 @@ const EducationAchievements = () => {
           tags: ["Research", "Conference", "Innovation"],
         },
         {
-          id: 2,
-          title: "Top 5 Capstone Project Awardee",
-          description:
-            "Developed award-winning mobile application for healthcare management",
-          date: "December 2024",
-          type: "Project",
-          image:
-            "https://via.placeholder.com/120x120/0ea5e9/ffffff?text=CAPSTONE",
-          tags: ["Mobile Dev", "Healthcare", "Innovation"],
-        },
-      ],
-    },
-    {
-      category: "Technical Competitions",
-      achievements: [
-        {
           id: 3,
-          title: "Best Mobile App UI - CS Week",
+          title: "National Research Conference NCCEB 2024",
           description:
-            "Created outstanding user interface design for university competition",
-          date: "November 2023",
-          type: "Design",
-          image: "https://via.placeholder.com/120x120/0ea5e9/ffffff?text=UI/UX",
-          tags: ["UI/UX", "Design", "Mobile"],
+            "Won 1st Place (IT/CS Track) in the National Conference on Computing, Education, and Business (NCCEB) 2024",
+          date: "May 2024",
+          type: "Research",
+          image: "/certificate/cert2.jpg",
+          tags: ["Research", "Excellence", "Recognition"],
         },
         {
           id: 4,
-          title: "Programming Competition Winner",
-          description: "First place in algorithmic programming challenge",
-          date: "September 2023",
-          type: "Competition",
-          image: "https://via.placeholder.com/120x120/0ea5e9/ffffff?text=CODE",
-          tags: ["Algorithms", "Programming", "Competition"],
+          title: "Contribution - eBaybaymo Project",
+          description:
+            "Outstanding contribution as a Fullstack Developer in the eBaybaymo Version 2 project.",
+          date: "February 2024",
+          type: "Project",
+          image: "/certificate/cert3.jpg",
+          tags: ["Project", "Contribution", "Innovation"],
         },
         {
           id: 5,
-          title: "Hackathon 2nd Place",
+          title: "Participation NCCEB 2024",
           description:
-            "Built innovative solution for local business automation in 48 hours",
-          date: "May 2023",
-          type: "Hackathon",
-          image: "https://via.placeholder.com/120x120/0ea5e9/ffffff?text=HACK",
-          tags: ["Hackathon", "Innovation", "Teamwork"],
+            "Participating in the National Conference on Computing, Education, and Business (NCCEB) 2024",
+          date: "May 2024",
+          type: "Research",
+          image: "/certificate/cert4.jpg",
+          tags: ["Research", "Innovation"],
         },
-      ],
-    },
-    {
-      category: "Leadership & Recognition",
-      achievements: [
         {
           id: 6,
-          title: "Student Developer Ambassador",
+          title: "Programming Competition",
           description:
-            "Represented university in national tech conferences and workshops",
-          date: "2023 - 2024",
-          type: "Leadership",
-          image: "https://via.placeholder.com/120x120/0ea5e9/ffffff?text=LEAD",
-          tags: ["Leadership", "Community", "Tech"],
+            "Recognition for being 1st Place in Programming Contest - Senior Category.",
+          date: "September 2023",
+          type: "Competition",
+          image: "/certificate/cert5.jpg",
+          tags: ["Application", "Programming", "Competition"],
         },
         {
           id: 7,
-          title: "Open Source Contributor",
+          title: "Flutter Programming-  Mentorship",
           description:
-            "Active contributor to multiple open-source projects on GitHub",
-          date: "2022 - Present",
-          type: "Community",
-          image: "https://via.placeholder.com/120x120/0ea5e9/ffffff?text=OSS",
-          tags: ["Open Source", "GitHub", "Community"],
+            "Mentoring basic mobile development to  Junior developer student during the Computing Society Workshop in BISU-Bilar.",
+          date: "Novemeber 2024",
+          type: "Mentorship",
+          image: "/certificate/cert6.jpg",
+          tags: ["Programming", "Mobile", "Learning"],
+        },
+        {
+          id: 8,
+          title: "Seminar -Flutter Mobile Development",
+          description:
+            "Participating seminar for Mobile Development about the latest trends and best practices particulary in flutter. ",
+          date: "March 2025",
+          type: "Seminar",
+          image: "/certificate/cert7.jpg",
+          tags: ["Seminar", "Mobile", "Learnings"],
+        },
+        {
+          id: 9,
+          title: "Project Contribution - E Voting System",
+          description:
+            "Appreciation for contribution as a Programmer in the Development of the E Voting System used during SSG election.",
+          date: "April 2025",
+          type: "Contribution",
+          image: "/certificate/cert9.jpg",
+          tags: ["Contribution", "Project", "System"],
+        },
+        {
+          id: 10,
+          title: "Recognition - eBaybaymo Project",
+          description:
+            "Outstanding contribution as a Mobile Developer in the eBaybaymo mobile app",
+          date: "April 2025",
+          type: "Project",
+          image: "/certificate/cert10.jpg",
+          tags: ["Project", "Contribution", "Innovation"],
         },
       ],
     },
@@ -205,7 +225,7 @@ const EducationAchievements = () => {
 
   const getVisibleAchievements = (achievements, categoryIndex) => {
     const shouldShowAll = showAllAchievements[categoryIndex];
-    return shouldShowAll ? achievements : achievements.slice(0, 3);
+    return shouldShowAll ? achievements : achievements.slice(0, 6);
   };
 
   const setElementRef = (index) => (el) => {
@@ -225,7 +245,7 @@ const EducationAchievements = () => {
     <section
       ref={sectionRef}
       id="education"
-      className={`min-h-screen bg-gray-900 px-6 py-16 relative overflow-hidden transition-all duration-1000 ease-out `}
+      className={`min-h-screen bg-gray-900 px-4 sm:px-6 py-16 relative overflow-hidden transition-all duration-1000 ease-out`}
     >
       {/* Header Section */}
       <div
@@ -233,7 +253,7 @@ const EducationAchievements = () => {
         className={getElementClass(0, "text-center mb-16 relative z-10")}
       >
         <h2
-          className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
           style={{
             textShadow:
               "0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(100, 255, 218, 0.3)",
@@ -241,7 +261,7 @@ const EducationAchievements = () => {
         >
           Education & Achievements
         </h2>
-        <p className="text-xl text-slate-300 font-medium mb-8 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-slate-300 font-medium mb-8 max-w-2xl mx-auto px-4">
           My academic journey and professional accomplishments that shaped my
           expertise in technology and innovation
         </p>
@@ -259,7 +279,7 @@ const EducationAchievements = () => {
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-2 inline-flex">
           <button
             onClick={() => handleTabChange("education")}
-            className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+            className={`px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
               activeTab === "education"
                 ? "bg-sky-500 text-white shadow-lg shadow-sky-400/25"
                 : "text-slate-300 hover:text-white hover:bg-slate-700/50"
@@ -269,7 +289,7 @@ const EducationAchievements = () => {
           </button>
           <button
             onClick={() => handleTabChange("achievements")}
-            className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+            className={`px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
               activeTab === "achievements"
                 ? "bg-sky-500 text-white shadow-lg shadow-sky-400/25"
                 : "text-slate-300 hover:text-white hover:bg-slate-700/50"
@@ -297,7 +317,7 @@ const EducationAchievements = () => {
                 ref={setElementRef(index + 2)}
                 className={getElementClass(
                   index + 2,
-                  "group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-sky-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-sky-400/10 transform hover:-translate-y-2"
+                  "group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 sm:p-8 hover:border-sky-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-sky-400/10 transform hover:-translate-y-2"
                 )}
                 style={{
                   transitionDelay: `${index * 0.2}s`,
@@ -312,11 +332,11 @@ const EducationAchievements = () => {
                         <img
                           src={edu.image}
                           alt={edu.level}
-                          className="relative w-20 h-20 shadow-lg object-contain transition-all duration-300 group-hover:scale-110"
+                          className="relative w-16 h-16 sm:w-20 sm:h-20 shadow-lg object-contain transition-all duration-300 group-hover:scale-110"
                         />
                       </div>
                       <div>
-                        <h3 className="text-3xl font-bold text-white mb-2">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                           {edu.level}
                         </h3>
                         <div className="w-20 h-1 bg-sky-400 rounded-full"></div>
@@ -324,13 +344,15 @@ const EducationAchievements = () => {
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-xl font-semibold text-sky-400">
+                      <h4 className="text-lg sm:text-xl font-semibold text-sky-400">
                         {edu.degree}
                       </h4>
-                      <p className="text-lg text-slate-300">
+                      <p className="text-base sm:text-lg text-slate-300">
                         {edu.institution}
                       </p>
-                      <p className="text-slate-400">{edu.description}</p>
+                      <p className="text-slate-400 text-sm sm:text-base">
+                        {edu.description}
+                      </p>
                     </div>
                   </div>
 
@@ -398,34 +420,98 @@ const EducationAchievements = () => {
                   ref={setElementRef(catIndex * 10 + 2)}
                   className={getElementClass(catIndex * 10 + 2, "text-center")}
                 >
-                  <h3 className="text-3xl font-bold text-white mb-2">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                     {category.category}
                   </h3>
                   <div className="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {getVisibleAchievements(category.achievements, catIndex).map(
-                    (achievement, index) => (
+                {/* Horizontal Scrollable Container */}
+                <div className="relative">
+                  {/* Scroll Buttons */}
+                  <div className="hidden sm:flex absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10">
+                    <button
+                      onClick={() => {
+                        const container = document.getElementById(
+                          `scroll-container-${catIndex}`
+                        );
+                        container.scrollBy({ left: -300, behavior: "smooth" });
+                      }}
+                      className="bg-slate-800/90 hover:bg-slate-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 19l-7-7 7-7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div className="hidden sm:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10">
+                    <button
+                      onClick={() => {
+                        const container = document.getElementById(
+                          `scroll-container-${catIndex}`
+                        );
+                        container.scrollBy({ left: 300, behavior: "smooth" });
+                      }}
+                      className="bg-slate-800/90 hover:bg-slate-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Scrollable Achievement Cards */}
+                  <div
+                    id={`scroll-container-${catIndex}`}
+                    className="flex overflow-x-auto scrollbar-hide gap-4 sm:gap-6 pb-4 px-2 snap-x snap-mandatory"
+                    style={{
+                      scrollbarWidth: "none",
+                      msOverflowStyle: "none",
+                    }}
+                  >
+                    {category.achievements.map((achievement, index) => (
                       <div
                         key={achievement.id}
                         ref={setElementRef(catIndex * 10 + index + 3)}
                         className={getElementClass(
                           catIndex * 10 + index + 3,
-                          "group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 hover:border-sky-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-sky-400/10 transform hover:-translate-y-2 cursor-pointer"
+                          "group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-4 sm:p-6 hover:border-sky-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-sky-400/10 transform hover:-translate-y-2 cursor-pointer flex-shrink-0 snap-start"
                         )}
                         style={{
                           transitionDelay: `${index * 0.1}s`,
+                          width: "300px",
+                          minWidth: "300px",
                         }}
                         onClick={() => setSelectedImage(achievement.image)}
                       >
                         {/* Achievement Image */}
-                        <div className="relative mb-6">
+                        <div className="relative mb-4 sm:mb-6">
                           <div className="absolute inset-0 bg-sky-400 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                           <img
                             src={achievement.image}
                             alt={achievement.title}
-                            className="w-full h-32 rounded-xl border-2 border-slate-600 group-hover:border-sky-400 object-cover shadow-lg transition-all duration-300 relative z-10 group-hover:scale-105"
+                            className="w-full h-40 sm:h-40 rounded-xl border-2 border-slate-600 group-hover:border-sky-400 object-cover shadow-lg transition-all duration-300 relative z-10 group-hover:scale-105"
                           />
                           <div className="absolute top-2 right-2 bg-slate-900/80 backdrop-blur-sm rounded-lg px-2 py-1 text-xs text-sky-400 font-semibold">
                             {achievement.type}
@@ -433,11 +519,11 @@ const EducationAchievements = () => {
                         </div>
 
                         {/* Achievement Content */}
-                        <div className="space-y-4">
-                          <h4 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors duration-300">
+                        <div className="space-y-3 sm:space-y-4">
+                          <h4 className="text-lg sm:text-xl font-bold text-white group-hover:text-sky-400 transition-colors duration-300 leading-tight line-clamp-2">
                             {achievement.title}
                           </h4>
-                          <p className="text-slate-300 text-sm leading-relaxed">
+                          <p className="text-slate-300 text-sm leading-relaxed line-clamp-3">
                             {achievement.description}
                           </p>
                           <div className="flex justify-between items-center">
@@ -463,7 +549,7 @@ const EducationAchievements = () => {
 
                           {/* Tags */}
                           <div className="flex flex-wrap gap-2">
-                            {achievement.tags.map((tag, i) => (
+                            {achievement.tags.slice(0, 3).map((tag, i) => (
                               <span
                                 key={i}
                                 className="bg-slate-900/50 text-slate-300 px-2 py-1 rounded-md text-xs border border-slate-600 group-hover:border-sky-400/50 transition-colors duration-300"
@@ -474,31 +560,21 @@ const EducationAchievements = () => {
                           </div>
                         </div>
                       </div>
-                    )
-                  )}
-                </div>
-
-                {/* Show More/Less Button */}
-                {category.achievements.length > 3 && (
-                  <div
-                    ref={setElementRef(catIndex * 10 + 8)}
-                    className={getElementClass(
-                      catIndex * 10 + 8,
-                      "text-center mt-8"
-                    )}
-                  >
-                    <button
-                      onClick={() => toggleShowAll(catIndex)}
-                      className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-sky-400/25 transform hover:scale-105"
-                    >
-                      {showAllAchievements[catIndex]
-                        ? "Show Less"
-                        : `Show More (${
-                            category.achievements.length - 3
-                          } more)`}
-                    </button>
+                    ))}
                   </div>
-                )}
+
+                  {/* Mobile Scroll Indicator */}
+                  <div className="flex justify-center mt-1 sm:hidden">
+                    <div className="flex space-x-1">
+                      {category.achievements.map((_, index) => (
+                        <div
+                          key={index}
+                          className="w-2 h-2 bg-slate-600 rounded-full"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

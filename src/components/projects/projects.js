@@ -96,10 +96,11 @@ const ProjectsSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [containerState, setContainerState] = useState("visible");
+  const [containerState, setContainerState] = useState("hidden");
   const [selectedProject, setSelectedProject] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
+  const [hasEntered, setHasEntered] = useState(false);
 
   const projectsPerPage = 6;
   const totalPages = Math.ceil(projects.length / projectsPerPage);
@@ -134,12 +135,46 @@ const ProjectsSection = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Enhanced intersection observer for entrance animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+
+          // Trigger entrance animation sequence
+          if (!hasEntered) {
+            setHasEntered(true);
+
+            // Start with hidden state
+            setContainerState("hidden");
+
+            // After title animation starts, begin container entrance
+            setTimeout(() => {
+              setContainerState("entering");
+
+              // Complete entrance animation
+              setTimeout(() => {
+                setContainerState("visible");
+              }, 300);
+            }, 500);
+          }
+        } else {
+          setIsVisible(false);
+          // Reset entrance state when leaving viewport
+          if (hasEntered) {
+            setContainerState("exiting");
+            setTimeout(() => {
+              setContainerState("hidden");
+              setHasEntered(false);
+            }, 100);
+          }
+        }
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.2,
+        rootMargin: "-50px 0px -50px 0px",
+      }
     );
 
     if (sectionRef.current) {
@@ -151,7 +186,7 @@ const ProjectsSection = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [hasEntered]);
 
   const handlePageChange = (page) => {
     if (isAnimating || page === currentPage) return;
@@ -184,20 +219,66 @@ const ProjectsSection = () => {
 
   const getContainerClasses = () => {
     const baseClasses =
-      "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl mx-auto w-full transition-all duration-300 ease-out";
+      "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-6xl mx-auto w-full transition-all duration-600 ease-out";
 
     switch (containerState) {
-      case "exiting":
-        return `${baseClasses} opacity-0 transform translate-x-8 scale-95`;
+      case "hidden":
+        return `${baseClasses} opacity-0 transform translate-y-16 scale-95`;
       case "entering":
-        return `${baseClasses} opacity-0 transform -translate-x-8 scale-95`;
+        return `${baseClasses} opacity-0 transform translate-y-8 scale-98`;
+      case "exiting":
+        return `${baseClasses} opacity-0 transform translate-y-16 scale-95`;
       case "visible":
       default:
-        return `${baseClasses} opacity-100 transform translate-x-0 scale-100`;
+        return `${baseClasses} opacity-100 transform translate-y-0 scale-100`;
+    }
+  };
+
+  const getPaginationClasses = () => {
+    const baseClasses =
+      "flex justify-center items-center gap-4 mb-8 transition-all duration-500 ease-out";
+
+    switch (containerState) {
+      case "hidden":
+        return `${baseClasses} opacity-0 transform translate-y-8`;
+      case "entering":
+        return `${baseClasses} opacity-0 transform translate-y-4`;
+      case "exiting":
+        return `${baseClasses} opacity-0 transform translate-y-8`;
+      case "visible":
+      default:
+        return `${baseClasses} opacity-100 transform translate-y-0`;
+    }
+  };
+
+  const getProjectStatusClasses = () => {
+    const baseClasses = "text-center transition-all duration-500 ease-out";
+
+    switch (containerState) {
+      case "hidden":
+        return `${baseClasses} opacity-0 transform translate-y-8`;
+      case "entering":
+        return `${baseClasses} opacity-0 transform translate-y-4`;
+      case "exiting":
+        return `${baseClasses} opacity-0 transform translate-y-8`;
+      case "visible":
+      default:
+        return `${baseClasses} opacity-100 transform translate-y-0`;
     }
   };
 
   const ProjectCard = ({ project, index }) => {
+    const getCardDelay = () => {
+      switch (containerState) {
+        case "entering":
+          return `${index * 30}ms`;
+        case "visible":
+          return `${index * 10}ms`;
+        default:
+          return "0ms";
+      }
+    };
+
     return (
       <div
         className={`
@@ -205,14 +286,13 @@ const ProjectsSection = () => {
           transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl cursor-pointer
           aspect-[4/5] flex flex-col
           ${
-            containerState === "visible"
+            containerState === "visible" || containerState === "entering"
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
           }
         `}
         style={{
-          transitionDelay:
-            containerState === "visible" ? `${index * 100}ms` : "0ms",
+          transitionDelay: getCardDelay(),
         }}
         onClick={() => handleProjectClick(project)}
       >
@@ -367,22 +447,53 @@ const ProjectsSection = () => {
           overflow: hidden;
         }
         
-        @keyframes slideLeft {
-          from { opacity: 0; transform: translateX(-30px); }
-          to { opacity: 1; transform: translateX(0); }
+        @keyframes slideInFromLeft {
+          from { 
+            opacity: 0; 
+            transform: translateX(-50px) translateY(20px);
+          }
+          to { 
+            opacity: 1; 
+            transform: translateX(0) translateY(0);
+          }
         }
         
-        @keyframes slideRight {
-          from { opacity: 0; transform: translateX(30px); }
-          to { opacity: 1; transform: translateX(0); }
+        @keyframes slideInFromRight {
+          from { 
+            opacity: 0; 
+            transform: translateX(50px) translateY(20px);
+          }
+          to { 
+            opacity: 1; 
+            transform: translateX(0) translateY(0);
+          }
+        }
+        
+        @keyframes fadeInUp {
+          from { 
+            opacity: 0; 
+            transform: translateY(30px);
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0);
+          }
         }
         
         .title-animate {
-          animation: slideLeft 0.6s ease-out forwards;
+          animation: slideInFromLeft 0.8s ease-out forwards;
         }
         
         .subtitle-animate {
-          animation: slideRight 0.6s ease-out 0.1s both;
+          animation: slideInFromRight 0.8s ease-out 0.2s both;
+        }
+        
+        .container-entrance {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .staggered-entrance {
+          animation: fadeInUp 0.5s ease-out forwards;
         }
       `}</style>
 
@@ -395,8 +506,12 @@ const ProjectsSection = () => {
           <h2
             className={`
               text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 
-              tracking-tight transition-opacity duration-300
-              ${isVisible ? "title-animate opacity-100" : "opacity-0"}
+              tracking-tight transition-all duration-800
+              ${
+                isVisible
+                  ? "title-animate opacity-100"
+                  : "opacity-0 transform translate-x-8"
+              }
             `}
             style={{
               textShadow:
@@ -406,8 +521,10 @@ const ProjectsSection = () => {
             Featured Projects
           </h2>
           <p
-            className={`text-gray-300 text-lg max-w-2xl mx-auto ${
-              isVisible ? "subtitle-animate" : "opacity-0"
+            className={`text-gray-300 text-lg max-w-2xl mx-auto transition-all duration-800 ${
+              isVisible
+                ? "subtitle-animate opacity-100"
+                : "opacity-0 transform translate-x-8"
             }`}
           >
             Explore my latest work across web development, mobile apps, and
@@ -428,7 +545,7 @@ const ProjectsSection = () => {
         </div>
 
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-4 mb-8">
+          <div className={getPaginationClasses()}>
             <button
               onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1 || isAnimating}
@@ -476,7 +593,7 @@ const ProjectsSection = () => {
         )}
 
         {totalPages > 1 && (
-          <div className="text-center">
+          <div className={getProjectStatusClasses()}>
             <p className="text-gray-400 text-sm">
               {(currentPage - 1) * projectsPerPage + 1}-
               {Math.min(currentPage * projectsPerPage, projects.length)} of{" "}
